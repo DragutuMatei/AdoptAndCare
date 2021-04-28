@@ -426,7 +426,7 @@ $radius: 4px;
     width: 85vw;
 
     &__avatar {
-      background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217538/default-avatar-ponsy-deer.png);
+      
       background-size: cover;
       width: 9em;
       height: 9em;
@@ -447,10 +447,10 @@ $radius: 4px;
         height: 9em;
         padding: 4px 6px 6px;
         transition: all 0.2s;
-        opacity: 0;
-        &:hover {
-          opacity: 1;
-        }
+        // opacity: 0;
+        // &:hover {
+        //   opacity: 1;
+        // }
       }
       .drop_target input[type="file"] {
         visibility: hidden;

@@ -68,9 +68,9 @@ class UserPage(DetailView):
 
 
 class ProfileEditView(UpdateView):
-    # model = Profile
+    model = Profile
     form_class = ProfileForm
-    template_name = 'registration/profile.html'
+    template_name = 'registration/editprofile.html'
     success_url = reverse_lazy('home')
 
     

@@ -7,12 +7,11 @@ from django.urls import reverse
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User,  blank=False, null=False, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     adresa = models.CharField(max_length=400)
-    imag = models.ImageField( blank=False, null=False,
-                              )
-    phone = models.CharField( blank=False, null=False, max_length=12)
-    media = models.CharField( blank=False, null=False, max_length=80)
+    imag = models.ImageField( )
+    phone = models.CharField(   max_length=12)
+    media = models.CharField(  max_length=80)
 
     def __str__(self):
         return str(self.pk)

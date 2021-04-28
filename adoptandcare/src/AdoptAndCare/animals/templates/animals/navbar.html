@@ -40,17 +40,15 @@
         <li class="nav-link">
             <a class="link" href="{% url 'register' %}">Register</a>
         </li> {% endcomment %}
-
-
         <li class="nav-link" id="drop">
             <div class="link" id="drr">Login</div>
             <div class="dropdown-content">
-                <a class="link" href="{% url 'register' %}">1) Register</a>
-                <a class="link" href="{% url 'login'  %}">2) Login</a>
-                <a class="link" href="{% url 'create_profile' %}">3) Create profile</a>
+                <a class="link" href="{% url 'register' %}">Register</a>
+                <a class="link" href="{% url 'login'  %}">Login</a>
+                {% comment %} <a class="link" href="{% url 'create_profile' %}">3) Create profile</a> {% endcomment %}
             </div>
         </li>
-
         {% endif %}
+
     </ul>
 </header>

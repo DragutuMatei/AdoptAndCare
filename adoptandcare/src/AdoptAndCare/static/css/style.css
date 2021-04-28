@@ -95,23 +95,23 @@ header .nav-links .nav-link {
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 1) {
-  -webkit-transition-delay: 0.62277s;
-          transition-delay: 0.62277s;
+  -webkit-transition-delay: 0.405s;
+          transition-delay: 0.405s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 2) {
-  -webkit-transition-delay: 0.64038s;
-          transition-delay: 0.64038s;
+  -webkit-transition-delay: 0.23147s;
+          transition-delay: 0.23147s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 3) {
-  -webkit-transition-delay: 0.9778s;
-          transition-delay: 0.9778s;
+  -webkit-transition-delay: 0.28448s;
+          transition-delay: 0.28448s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 4) {
-  -webkit-transition-delay: 0.86417s;
-          transition-delay: 0.86417s;
+  -webkit-transition-delay: 0.75224s;
+          transition-delay: 0.75224s;
 }
 
 header .nav-links .nav-link .link {
@@ -2853,20 +2853,20 @@ main {
     transition: opacity 0.2s ease-in-out 1s, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s, -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 1) {
-    -webkit-transition-delay: 0.26685s;
-            transition-delay: 0.26685s;
+    -webkit-transition-delay: 0.41547s;
+            transition-delay: 0.41547s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 2) {
-    -webkit-transition-delay: 0.53303s;
-            transition-delay: 0.53303s;
+    -webkit-transition-delay: 0.69664s;
+            transition-delay: 0.69664s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 3) {
-    -webkit-transition-delay: 0.77378s;
-            transition-delay: 0.77378s;
+    -webkit-transition-delay: 0.9324s;
+            transition-delay: 0.9324s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 4) {
-    -webkit-transition-delay: 0.11331s;
-            transition-delay: 0.11331s;
+    -webkit-transition-delay: 0.34212s;
+            transition-delay: 0.34212s;
   }
   .header .menu-btn:checked ~ .menu-icon {
     border-radius: 90px;
@@ -3375,7 +3375,6 @@ svg {
 }
 
 .login_inner__avatar {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/217538/default-avatar-ponsy-deer.png);
   background-size: cover;
   width: 9em;
   height: 9em;
@@ -3400,11 +3399,6 @@ svg {
   padding: 4px 6px 6px;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
-  opacity: 0;
-}
-
-.login_inner__avatar .drop_target:hover {
-  opacity: 1;
 }
 
 .login_inner__avatar .drop_target input[type="file"] {
