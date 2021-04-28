@@ -9,7 +9,7 @@
   {% if active_user.profile.imag %}
   <aside class="avatar" style="background: url('{{active_user.profile.imag.url}}');background-size:cover;"></aside>
   {% else %}
-  <aside class="avatar" style="background: url('{% static 'animals/img/caine.png' %}'); background-size: cover;">
+  <aside class="avatar" style="background: url('{% static '/img/caine.png' %}'); background-size: cover;">
   </aside>
   {% endif %}
   <!-- <section class="infss">
@@ -88,7 +88,7 @@
         {% if active_user.profile.imag %}
           <img src="{{active_user.profile.imag.url}}" alt="">
         {% else %}
-          <img src="{% static 'animals/img/caine.png' %}" alt="">
+          <img src="{% static '/img/caine.png' %}" alt="">
         {% endif %}
       </div>
       <div class="informatii">

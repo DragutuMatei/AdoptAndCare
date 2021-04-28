@@ -2,8 +2,6 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from animals.models import *
-from phonenumber_field.formfields import PhoneNumberField
-
 
 class RegisterForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(

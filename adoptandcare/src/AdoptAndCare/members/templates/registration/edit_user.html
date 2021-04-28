@@ -8,7 +8,7 @@
 {% if request.user.profile.imag %}
     <aside class="avatar" style="background: url('{{request.user.profile.imag.url}}');background-size:cover;"></aside>
 {% else %}
-    <aside class="avatar" style="background: url('{% static 'animals/img/caine.png' %}');background-size:cover;"></aside>
+    <aside class="avatar" style="background: url('{% static ' /img/caine.png' %}');background-size:cover;"></aside>
 {% endif %}
 
     <section class='info'>
@@ -26,6 +26,6 @@
     </section>
 </main>
 
-{% comment %} <script src="{% static 'animals/js/user.js' %}"></script> {% endcomment %}
+{% comment %} <script src="{% static ' /js/user.js' %}"></script> {% endcomment %}
 
 {% endblock content %}

@@ -10,7 +10,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User,  blank=False, null=False, on_delete=models.CASCADE)
     adresa = models.CharField(max_length=400)
     imag = models.ImageField( blank=False, null=False,
-                             upload_to="images/profile/")
+                              )
     phone = models.CharField( blank=False, null=False, max_length=12)
     media = models.CharField( blank=False, null=False, max_length=80)
 
@@ -65,11 +65,11 @@ class Pet(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200, blank=False, null=False)
     description = models.TextField(blank=False, null=False)
-    imag1 = models.ImageField(upload_to="images/pets", blank=True, null=True)
-    imag2 = models.ImageField(upload_to="images/pets", blank=True, null=True)
-    imag3 = models.ImageField(upload_to="images/pets", blank=True, null=True)
-    imag4 = models.ImageField(upload_to="images/pets", blank=True, null=True)
-    imag5 = models.ImageField(upload_to="images/pets", blank=True, null=True)
+    imag1 = models.ImageField(blank=True, null=True)
+    imag2 = models.ImageField(blank=True, null=True)
+    imag3 = models.ImageField(blank=True, null=True)
+    imag4 = models.ImageField(blank=True, null=True)
+    imag5 = models.ImageField(blank=True, null=True)
 
     animal = models.CharField( choices=AnimalCh.choices, default=AnimalCh.DOG, max_length=200, blank=False, null=False)
     age = models.CharField(choices=AgeCh.choices, default=AgeCh.BABY, max_length=50, blank=False, null=False)

@@ -2,7 +2,8 @@ footer {
   height: 300px;
   background-color: $blue;
   position: relative;
-
+  width: 100vw;
+  
   .footer__inner {
     position: relative;
     bottom: 0;

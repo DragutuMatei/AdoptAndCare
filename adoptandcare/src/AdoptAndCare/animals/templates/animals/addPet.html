@@ -1,6 +1,6 @@
 {% extends 'animals/base.html' %} {% load static %} {% block content %}
 
-<link rel="stylesheet" href="{% static 'animals/css/panda.css' %}">
+<link rel="stylesheet" href="{% static '/css/panda.css' %}">
 <div class="tot">
 
     <div class="animal">
@@ -494,6 +494,6 @@ $(".image_title input").blur(function () {
 
 
 </script>
-<script src=" {% static 'animals/js/navbar.js' %} "></script>
+<script src=" {% static '/js/navbar.js' %} "></script>
 
 {% endblock content %}

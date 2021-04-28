@@ -1,36 +1,36 @@
-{% extends 'animals/base.html' %} {% load static %}
-
-
-{% block title %}
- 
-{{request.user}}'s profile
-
-{% endblock title %}
-
-
-
-{% block content %}
+{% extends 'animals/base.html' %} {% load static %} {% block title %}
+{{request.user}}'s profile {% endblock title %} {% block content %}
 <div class="login">
-{% if pr.user.pk == request.user.pk %}
- <form method="POST" action="" enctype="multipart/form-data" class="login_inner">
+  {% comment %} {% if pr.user.pk == request.user.pk and mes != 'Edit your
+  profile' %} {% endcomment %}
+  <form
+    method="POST"
+    action=""
+    enctype="multipart/form-data"
+    class="login_inner"
+  >
     {% csrf_token %}
     <div class="login_inner__avatar">
-        <label class="drop_target">
-          <div class="image_preview"></div>
-          {% comment %} {{form.imag}} {% endcomment %}
-          <input type="file" name="imag" accept="image/*" id="inputFile" >
-        </label> 
+      <label class="drop_target">
+        <div class="image_preview"></div>
+        {% comment %} {{form.imag}} {% endcomment %}
+        <input type="file" name="imag" accept="image/*" id="inputFile" />
+      </label>
     </div>
     {{form.imag.error}}
-    <h1>
-      {{mes}}
+    <h1>{{mes}}</h1>
+    <h1 style="color: black; font-family: 'Roboto'; font-size: 22px">
+      Enter your adress(Country, County, City)
     </h1>
-    {{form.adresa}}
-    {{form.adresa.error}}
-    {{form.phone}}
-    {{form.phone.error}}
-    {{form.media}}
-    {{form.phone.error}}
+    {{form.adresa}} {{form.adresa.error}}
+    <h1 style="color: black; font-family: 'Roboto'; font-size: 22px">
+      Enter your phone number
+    </h1>
+    {{form.phone}} {{form.phone.error}}
+    <h1 style="color: black; font-family: 'Roboto'; font-size: 22px">
+      Enter your facebook url for contact
+    </h1>
+    {{form.media}} {{form.phone.error}}
 
     <input type="submit" value="Ready" />
   </form>
@@ -40,8 +40,7 @@
     </div>
   </div>
 </div>
-{% endif %}
- 
+{% comment %} {% endif %} {% endcomment %}
 
 <script>
   var $droptarget = $(".drop_target"),

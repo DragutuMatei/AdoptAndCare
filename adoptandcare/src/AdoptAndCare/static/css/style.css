@@ -95,23 +95,23 @@ header .nav-links .nav-link {
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 1) {
-  -webkit-transition-delay: 0.21821s;
-          transition-delay: 0.21821s;
+  -webkit-transition-delay: 0.62277s;
+          transition-delay: 0.62277s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 2) {
-  -webkit-transition-delay: 0.90376s;
-          transition-delay: 0.90376s;
+  -webkit-transition-delay: 0.64038s;
+          transition-delay: 0.64038s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 3) {
-  -webkit-transition-delay: 0.47908s;
-          transition-delay: 0.47908s;
+  -webkit-transition-delay: 0.9778s;
+          transition-delay: 0.9778s;
 }
 
 header .nav-links .nav-link:nth-of-type(3n + 4) {
-  -webkit-transition-delay: 0.52421s;
-          transition-delay: 0.52421s;
+  -webkit-transition-delay: 0.86417s;
+          transition-delay: 0.86417s;
 }
 
 header .nav-links .nav-link .link {
@@ -2199,6 +2199,7 @@ footer {
   height: 300px;
   background-color: #05386b;
   position: relative;
+  width: 100vw;
 }
 
 footer .footer__inner {
@@ -2852,20 +2853,20 @@ main {
     transition: opacity 0.2s ease-in-out 1s, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s, -webkit-transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 1) {
-    -webkit-transition-delay: 0.41353s;
-            transition-delay: 0.41353s;
+    -webkit-transition-delay: 0.26685s;
+            transition-delay: 0.26685s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 2) {
-    -webkit-transition-delay: 0.13707s;
-            transition-delay: 0.13707s;
+    -webkit-transition-delay: 0.53303s;
+            transition-delay: 0.53303s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 3) {
-    -webkit-transition-delay: 0.70071s;
-            transition-delay: 0.70071s;
+    -webkit-transition-delay: 0.77378s;
+            transition-delay: 0.77378s;
   }
   .header .menu-btn:checked ~ .nav-links .nav-link:nth-of-type(3n + 4) {
-    -webkit-transition-delay: 0.96935s;
-            transition-delay: 0.96935s;
+    -webkit-transition-delay: 0.11331s;
+            transition-delay: 0.11331s;
   }
   .header .menu-btn:checked ~ .menu-icon {
     border-radius: 90px;

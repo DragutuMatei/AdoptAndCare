@@ -1,6 +1,6 @@
 {% extends 'animals/base.html' %} {% load static %} {% block content %}
-<link rel="stylesheet" href="{% static 'animals/css/pets.css' %}">
-<script src="{% static 'animals/js/modernizr.custom.js' %}"></script>
+<link rel="stylesheet" href="{% static '/css/pets.css' %}">
+<script src="{% static '/js/modernizr.custom.js' %}"></script>
 <div class="all">
   <button id="filters">
     <h1>Filters <lord-icon src="https://cdn.lordicon.com//rivoakkk.json" trigger="loop" stroke="100"
@@ -249,8 +249,8 @@
     });
   </script>
 </div>
-<script src=" {% static 'animals/js/isotope.pkgd.min.js' %} "></script>
-<script src=" {% static 'animals/js/navbar.js' %} "></script>
-<script src=" {% static 'animals/js/flickity.pkgd.min.js' %} "></script>
-<script src=" {% static 'animals/js/main_for_grid.js' %} "></script>
+<script src=" {% static '/js/isotope.pkgd.min.js' %} "></script>
+<script src=" {% static '/js/navbar.js' %} "></script>
+<script src=" {% static '/js/flickity.pkgd.min.js' %} "></script>
+<script src=" {% static '/js/main_for_grid.js' %} "></script>
 {% endblock content %}

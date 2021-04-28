@@ -17,7 +17,6 @@ class LoginView(LoginRequiredMixin):
         return self.render_to_response({})
 
 
-
 class RegisterView(generic.CreateView):
     form_class = RegisterForm
     template_name = 'registration/register.html'
@@ -29,7 +28,8 @@ class CreateProfileView(generic.CreateView):
     model = Profile
     form_class = ProfileForm
     template_name = "registration/profile.html"
-    # success_url = reverse_lazy('create_profile')
+    success_url = reverse_lazy('home')
+    
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -68,7 +68,7 @@ class UserPage(DetailView):
 
 
 class ProfileEditView(UpdateView):
-    model = Profile
+    # model = Profile
     form_class = ProfileForm
     template_name = 'registration/profile.html'
     success_url = reverse_lazy('home')
