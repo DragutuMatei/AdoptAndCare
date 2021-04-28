@@ -1,0 +1,31 @@
+{% extends 'animals/base.html' %}
+
+
+
+
+{% load static %} {% block content %}
+<main class='profile'>
+{% if request.user.profile.imag %}
+    <aside class="avatar" style="background: url('{{request.user.profile.imag.url}}');background-size:cover;"></aside>
+{% else %}
+    <aside class="avatar" style="background: url('{% static 'animals/img/caine.png' %}');background-size:cover;"></aside>
+{% endif %}
+
+    <section class='info'>
+        <h1>Update settings</h1>
+        <form class="profileInfo opt act" method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+                <style>p{margin:20px}</style>
+            <button class="mainButton" style="margin:20px auto" type="submit">
+                <h1>Update settings</h1>
+            </button>
+        </form>
+
+
+    </section>
+</main>
+
+{% comment %} <script src="{% static 'animals/js/user.js' %}"></script> {% endcomment %}
+
+{% endblock content %}

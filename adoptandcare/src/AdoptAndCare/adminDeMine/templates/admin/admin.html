@@ -1,0 +1,179 @@
+{% extends 'animals/base.html' %}
+{% load static %} 
+
+
+{% block title %}
+  Admin section
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="all_admin">
+    <style>
+        .all_admin {
+            padding-top: 100px;
+            width: 100vw;
+            font-family: "Roboto", sans-serif;
+            background-image: linear-gradient(to right top,
+                    #05386b,
+                    #005788,
+                    #00779c,
+                    #0096a5,
+                    #00b5a6,
+                    #00c5a3,
+                    #28d49b,
+                    #4ee28e,
+                    #42e788,
+                    #35ec81,
+                    #23f07a,
+                    #00f572);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: row;
+        }
+
+        table {
+            margin: 50px;
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 70%;
+            background: #042b52;
+        }
+
+        th,
+        td {
+            text-align: center;
+            padding: 8px;
+            border: #0096a5 1px solid;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        a{
+            color:white;
+            text-decoration: none;
+        }
+
+        tr:nth-child(even) {
+            background-color: #005788;
+        }
+    </style>
+    </style>
+    <table>
+    
+        <tr>
+            <th> User </th>
+            <th> Delete </th>
+        </tr>
+    
+        {% for user in users %}
+        <tr>
+            <td> 
+                {{user.pk}}
+            </td>
+            <td>
+                <a href="{% url 'active_user' user.pk %}"> {{user}}</a>
+            </td>
+            <td>
+                <form action="{% url 'deleteUser' user.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button>delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+    
+        <tr>
+            <th> Pet </th>
+            <th> Delete </th>
+        </tr>
+        {% for pet in pets %}
+        <tr>
+            <td>
+                {{pet.pk}}
+            </td>
+            <td>
+                <a href="{% url 'pet' pet.pk %}"> {{pet}}</a>
+            </td>
+            <td>
+                <form action="{% url 'delete' pet.pk request.user.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button>delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        <tr>
+            <th> From </th>
+            <th> Message </th>
+            <th> Delete </th>
+        </tr>
+        {% for email in emails %}
+        <tr>
+            <td>
+                {{email.pk}}
+            </td>   
+            <td>
+                 {{email.email_from}}
+            </td>
+            <td>
+                {{email.message}}
+            </td>
+            <td>
+                <form action="{% url 'deleteEmail' email.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button>delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table> 
+    <table>
+        <tr>
+            <th> Adopted pet </th>
+            <th> Owner </th>
+            <th> Adopter </th>
+            <th> Delete </th>
+        </tr>
+        {% for ad in adopt %}
+        <tr>
+            <td>
+                {{ad.pk}}
+            </td>   
+            <td>
+                 {{ad.pet}}
+            </td>
+            <td>
+                 {{ad.owner.get.username}}
+            </td>
+            <td>
+                 {{ad.adopter.get.username}}
+            </td>
+            <td>
+                <form action="{% url 'deleteAdoptedPet' ad.pk ad.pet.pk %}" method="POST">
+                    {% csrf_token %}
+                    <button>delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<script src=" {% static 'animals/js/navbar.js' %} "></script>
+{% endblock content %}

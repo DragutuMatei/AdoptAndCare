@@ -1,0 +1,56 @@
+<header class="header">
+    <div class="logo">
+        <a href="{% url 'home' %}">
+            <lord-icon src="https://cdn.lordicon.com/wzckbizc.json" trigger="loop"
+                colors="primary:#ff6a00,secondary:#ff6a00" stroke="84" style="width: 65px; height: 65px">
+            </lord-icon>
+        </a>
+    </div>
+    <input type="checkbox" class="menu-btn" id="menu-btn" />
+    <label for="menu-btn" class="menu-icon">
+        <span class="menu-icon__line"></span>
+    </label>
+    <ul class="nav-links">
+        <li class="nav-link"><a class="link" href="/#steps">Steps</a></li>
+        <li class="nav-link"><a class="link" href="/#about">About</a></li>
+        <li class="nav-link"><a class="link" href="{% url 'pets' %}">Pets</a></li>
+        {% if request.user.is_staff %}
+        <li class="nav-link"><a class="link" href="{% url 'admin' %}">Admin</a></li>
+        {% endif %}
+
+        {% if request.user.is_authenticated %}
+        <li class="nav-link">
+            <a class="link" href="{% url 'active_user' request.user.pk %}">{{request.user}}</a>
+        </li>
+        
+        <li class="nav-link" id="drop">
+            {% comment %} <div class="link" id="drr">{{request.user}}</div>
+            <div class="dropdown-content">
+                <a href="#">Edit</a>
+                <a href="#">Link 2</a>
+                <a href="{% url 'active_user' user.pk %}">{{request.user}}</a>
+                <a href="#">Link 3</a>
+            </div> {% endcomment %}
+            <a class="link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        {% else %}
+        {% comment %} <li class="nav-link">
+            <a class="link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li class="nav-link">
+            <a class="link" href="{% url 'register' %}">Register</a>
+        </li> {% endcomment %}
+
+
+        <li class="nav-link" id="drop">
+            <div class="link" id="drr">Login</div>
+            <div class="dropdown-content">
+                <a class="link" href="{% url 'register' %}">1) Register</a>
+                <a class="link" href="{% url 'login'  %}">2) Login</a>
+                <a class="link" href="{% url 'create_profile' %}">3) Create profile</a>
+            </div>
+        </li>
+
+        {% endif %}
+    </ul>
+</header>

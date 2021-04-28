@@ -1,0 +1,31 @@
+{% load static %}
+<footer>
+    <div class="footer__inner">
+        <div class="logo">
+            <lord-icon src="https://cdn.lordicon.com/wzckbizc.json" trigger="loop"
+                colors="primary:#ff6a00,secondary:#ff6a00" stroke="84" style="width: 65px; height: 65px">
+            </lord-icon>
+        </div>
+        <div class="nava">
+            <a href="{% url 'home' %}">
+                Adopt & Care</a>
+        </div>
+    </div>
+</footer>
+<script>
+    var logoElement = $('footer .logo');
+
+    $(window).scroll(function () {
+
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+
+            $(logoElement).addClass('show');
+
+        } else if ($(logoElement).hasClass('show') && $(window).scrollTop() + $(window).height() > $(document)
+            .height() - 150) {
+
+            $(logoElement).removeClass('show');
+
+        }
+    });
+</script>

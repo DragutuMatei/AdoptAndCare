@@ -1,0 +1,48 @@
+.mainButton {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+  width: max-content;
+  z-index: 10;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: $white;
+  transition: 0.5s ease-in-out;
+
+  i {
+    width: auto;
+    display: flex;
+    transition: 0.3s ease-in;
+  }
+
+  h4 {
+    margin-left: 20px;
+    padding: 0;
+  }
+
+  * {
+    display: flex;
+    padding: 17px 30px;
+    background: $blue;
+    width: 100%;
+    // height: 100%;
+    border-radius: 30px;
+    color: $white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Roboto", sans-serif;
+  }
+}
+
+.sc {
+  position: fixed;
+  bottom: 60px;
+  mix-blend-mode: overlay;
+  right: 50px;
+  z-index: 90;
+}

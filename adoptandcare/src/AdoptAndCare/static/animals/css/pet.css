@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:800");
+/*
+    font-family: "Rubik", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: "Dela Gothic One", cursive;
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.totul {
+  width: 100vw;
+  padding-top: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#05386b), color-stop(#005788), color-stop(#00779c), color-stop(#0096a5), color-stop(#00b5a6), color-stop(#00c5a3), color-stop(#28d49b), color-stop(#4ee28e), color-stop(#42e788), color-stop(#35ec81), color-stop(#23f07a), to(#00f572));
+  background-image: linear-gradient(to right top, #05386b, #005788, #00779c, #0096a5, #00b5a6, #00c5a3, #28d49b, #4ee28e, #42e788, #35ec81, #23f07a, #00f572);
+  min-height: 100vh;
+}
+
+.totul .top {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100px;
+  position: relative;
+  margin: 40px 0;
+}
+
+.totul .top .space {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.totul .top .space h1 {
+  font-size: 20px;
+  color: #edf5e1;
+  font-family: "Rubik", sans-serif;
+  text-transform: capitalize;
+  z-index: 3;
+  text-shadow: 0 0 20px black;
+}
+
+.totul .top .linie {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 86vw;
+  height: 3px;
+  background: #05386b;
+  z-index: 1;
+}
+
+.totul .top img,
+.totul .top svg {
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  border: #05386b 3px solid;
+}
+
+.totul .cent {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.totul .cent .parent {
+  width: 681px;
+  height: 384px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+}
+
+.totul .cent .parent svg {
+  position: absolute;
+  z-index: 1;
+  width: 681px;
+  height: 384px;
+}
+
+.totul .cent .parent button {
+  position: absolute;
+  z-index: 50;
+  width: 40px;
+  overflow: hidden;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 88px 5px rgba(0, 0, 0, 0.75);
+}
+
+.totul .cent .parent button:focus {
+  outline-width: 0;
+}
+
+.totul .cent .parent circle {
+  stroke: #fff;
+  fill: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.totul .cent .parent #svg1 circle {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.totul .cent .parent #svg2 circle {
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+}
+
+.totul .cent .parent #Capa_1 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: translate(-7px, -8px);
+          transform: translate(-7px, -8px);
+}
+
+.totul .cent .parent #Capa_2 {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  -webkit-transform: translate(-9px, -8px);
+          transform: translate(-9px, -8px);
+}
+
+.totul .cent .parent .right {
+  margin-left: 628px;
+  margin-top: 168px;
+  border: 1px solid #849494;
+  background-color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.totul .cent .parent .right:hover {
+  background-color: #fff;
+}
+
+.totul .cent .parent .left {
+  margin-left: 0.5%;
+  margin-top: 168px;
+  border: 1px solid #849494;
+  background-color: transparent;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.totul .cent .parent .left:hover {
+  background-color: #fff;
+}
+
+.totul .cent .parent .circle1 {
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.totul .cent .parent .circle2 {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.totul .cent .parent .circle3 {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.totul .cent .parent .circle4 {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.totul .cent .parent .circle5 {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.totul .cent .parent .circle6 {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.totul .cent .parent .circle7 {
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.totul .cent .parent .circle8 {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.totul .cent .parent .circle9 {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.totul .cent .parent .circle10 {
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
+}
+
+.totul .cent .parent .circle11 {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.totul .cent .parent .circle12 {
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+
+.totul .cent .parent .circle13 {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.totul .cent .parent .circle14 {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.totul .cent .parent .circle15 {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.totul .cent .parent .circle16 {
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.totul .cent .parent .circle17 {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.totul .cent .parent .circle18 {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.totul .cent .parent .slider {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  background: #000;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.totul .cent .parent .slide1,
+.totul .cent .parent .slide2,
+.totul .cent .parent .slide3,
+.totul .cent .parent .slide4,
+.totul .cent .parent .slide5 {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  color: #fff;
+  font-size: 62px;
+  font-weight: 800;
+  text-align: center;
+  width: 25%;
+  height: 100%;
+  z-index: 10;
+  -webkit-transition: 1.4s;
+  transition: 1.4s;
+}
+
+.totul .cent .parent .tran {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.totul .cent .parent .up1 {
+  z-index: 20;
+}
+
+.totul .cent .parent .up2 {
+  z-index: 40;
+}
+
+.totul .cent .parent .steap {
+  stroke-width: 0;
+}
+
+.totul .cent .parent .streak {
+  stroke-width: 82px;
+}
+
+.totul .cent .descr {
+  max-width: 500px;
+  position: relative;
+  margin: 20px 0 50px 0;
+}
+
+.totul .cent .descr h1 {
+  font-size: 28px;
+  color: #ff6a00;
+  text-transform: capitalize;
+  font-family: "Rubik", sans-serif;
+  margin-bottom: 20px;
+  font-weight: 900;
+  text-align: right;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+.totul .cent .descr a {
+  padding: 20px;
+  text-decoration: none;
+  text-align: right;
+  color: #0e121b;
+  width: 100%;
+  font-size: 18px;
+  padding-top: 0;
+}
+
+.totul .cent .descr p {
+  width: 100%;
+  margin-top: 20px;
+  color: #edf5e1;
+  font-size: 20px;
+  text-indent: 30px;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  padding: 0 10px;
+}
+
+.totul .down {
+  margin: 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 60vw;
+  margin-left: 10vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.totul .down h1 {
+  color: #ff6a00;
+  font-size: 40px;
+  font-family: "Dela Gothic One", cursive;
+  margin: 30px;
+}
+
+.totul .down .table {
+  max-width: 450px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.totul .down .table .row {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.totul .down .table .row h2 {
+  font-family: "Roboto", sans-serif;
+  color: #edf5e1;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: auto;
+}
+
+.totul .down .table .row h2 span {
+  color: #ff6a00;
+  font-size: 23px;
+}
+
+@media (max-width: 1200px) {
+  .totul .cent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .totul .cent .parent {
+    width: 90vw;
+  }
+  .totul .cent .parent .slider .right {
+    margin-left: calc(90vw - 54px);
+  }
+}
+/*# sourceMappingURL=pet.css.map */

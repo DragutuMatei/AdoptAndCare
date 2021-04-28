@@ -1,0 +1,377 @@
+.inspiration {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-family: "Gill Sans", sans-serif;
+  font-size: 12px;
+  color: #463c3c;
+}
+.inspiration img {
+  width: 60px;
+}
+.center {
+  position: relative;
+  display: inline-block;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 3px;
+  overflow: hidden;
+  background: $green;
+  //   background-image: linear-gradient(to top right, #f9a743, #f9db5f);
+}
+@media screen and (max-height: 500px) {
+  .center {
+    transition: transform 0.5s;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+.center .ear {
+  position: absolute;
+  top: -110px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #243946;
+}
+.center .ear.ear--left {
+  left: -135px;
+}
+.center .ear.ear--right {
+  right: -135px;
+}
+.center .face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 150px;
+  margin: calc(30vh - 75px) auto 10px;
+  --rotate-head: 0deg;
+  transform: rotate(var(--rotate-head));
+  transition: transform 0.2s;
+  transform-origin: center 20px;
+}
+.center .eye {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #243946;
+}
+.center .eye.eye--left {
+  margin-right: 40px;
+}
+.center .eye.eye--right {
+  margin-left: 40px;
+}
+.center .eye .glow {
+  position: relative;
+  top: 3px;
+  right: -12px;
+  width: 12px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #fff;
+  transform: rotate(38deg);
+}
+.center .nose {
+  position: relative;
+  top: 30px;
+  transform: scale(1.1);
+}
+.center .nose .glow {
+  position: absolute;
+  top: 3px;
+  left: 32%;
+  width: 15px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #476375;
+}
+.center .mouth {
+  position: relative;
+  margin-top: 45px;
+}
+.center svg.smile {
+  position: absolute;
+  left: -28px;
+  top: -19px;
+  transform: scaleX(1.1);
+  stroke: #243946;
+}
+.center .mouth-hole {
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 60px;
+  height: 15px;
+  border-radius: 50%/100% 100% 0% 0;
+  transform: rotate(180deg);
+  background-color: #243946;
+  z-index: -1;
+}
+.center .tongue {
+  position: relative;
+  top: 5px;
+  width: 30px;
+  height: 20px;
+  background-color: #ffd7dd;
+  transform-origin: top;
+  transform: rotateX(60deg);
+}
+.center .tongue.breath {
+  -webkit-animation: breath 0.3s infinite linear;
+  animation: breath 0.3s infinite linear;
+}
+.center .tongue-top {
+  position: absolute;
+  bottom: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: #ffd7dd;
+}
+.center .line {
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 5px;
+  background-color: #fcb7bf;
+}
+.center .median {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #fcb7bf;
+}
+.center .hands {
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.center .hands .hand {
+  //   position: absolute;
+  top: -6px;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  z-index: 1;
+}
+.center .hands .hand--left {
+  left: 50px;
+}
+.center .hands .hand--left.hide {
+  transform: translate(-26px, -155px) rotate(-160deg);
+}
+.center .hands .hand--left.peek {
+  transform: translate(-23px, -141px) rotate(-160deg);
+}
+.center .hands .hand--right {
+  left: 170px;
+}
+.center .hands .hand--right.hide {
+  transform: translate(25px, -155px) rotate(160deg);
+}
+.center .hands .hand--right.peek {
+  transform: translate(20px, -141px) rotate(160deg);
+}
+.center .hands .finger {
+  position: relative;
+  z-index: 0;
+}
+.center .hands .finger .bone {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #243946;
+  border-bottom: none;
+  border-top: none;
+  background: $lightgreen;
+  //   background-color: #fac555;
+}
+.center .hands .finger .nail {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 20px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #243946;
+  background: $lightgreen;
+  // background-color: #fac555;
+  z-index: -1;
+}
+.center .hands .finger:nth-child(1),
+.center .hands .finger:nth-child(3) {
+  left: 4px;
+  z-index: 1;
+}
+.center .hands .finger:nth-child(1) .bone,
+.center .hands .finger:nth-child(3) .bone {
+  height: 10px;
+}
+.center .hands .finger:nth-child(3) {
+  left: -4px;
+}
+.center .hands .finger:nth-child(2) {
+  top: -5px;
+  z-index: 2;
+}
+.center .hands .finger:nth-child(1) .nail,
+.center .hands .finger:nth-child(3) .nail {
+  top: 0px;
+}
+.center form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 80vw;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+.center form label {
+  position: relative;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 500px;
+}
+.center form label .fa {
+  position: absolute;
+  top: 40%;
+  left: 35px;
+  color: #bbb;
+}
+.center form label .fa:before {
+  position: relative;
+  padding: 10px;
+  left: 1px;
+}
+.center form input,
+.center form form-button {
+  height: 35px;
+  border: none;
+  font-size: 20px;
+  border-radius: 30px;
+}
+.username {
+  width: 100%;
+}
+.log{
+  margin: 30px;
+  padding: 11px 30px;
+}
+.center form form-button {
+  width: 300px;
+  height: 50px;
+  font-family: "Rubik", sans-serif;
+  font-size: 20px;
+  //   background: $lightblue;
+  color: $white;
+  margin: 20px auto;
+}
+.center form input {
+  padding: 30px 20px 30px 63px;
+  margin: 5px 0;
+  box-shadow: none;
+  outline: none;
+}
+.center form input::-moz-placeholder {
+  color: $blue;
+}
+.center form input:-ms-input-placeholder {
+  color: $lightblue;
+}
+.center form input::placeholder {
+  color: $lightblue;
+}
+.center form input.password {
+  padding: 30px 90px 30px 63px;
+  // padding: 0 90px 0 40px;
+  width: 100%;
+}
+.center form .password-button {
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+  right: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 27px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: $lightblue;
+
+  color: $white;
+}
+.center form .password-button:active {
+  transform: scale(0.95);
+}
+.center form form-button {
+  outline: none;
+  background: $blue;
+  color: $white;
+  transition: transform 0.1s;
+}
+.center form form-button:active {
+  transform: scale(0.95);
+}
+.center .social-buttons {
+  display: flex;
+  justify-content: center;
+}
+.center .social-buttons .social {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: $lightblue;
+  color: #fff;
+  font-size: 18px;
+}
+.center .social-buttons .social:active {
+  transform: scale(0.95);
+}
+.center .footer {
+  text-align: center;
+  margin-top: 15px;
+  a {
+    text-align: center;
+    color: $white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: "Dela Gothic One", cursive;
+  }
+}
+@-webkit-keyframes breath {
+  0%,
+  100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(60deg);
+  }
+}
+@keyframes breath {
+  0%,
+  100% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(60deg);
+  }
+}

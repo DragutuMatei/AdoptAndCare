@@ -1,0 +1,229 @@
+@media screen and (max-width: 1100px) {
+  .firstPage {
+    flex-direction: column;
+  }
+  .firstPage,
+  .secondPage,
+  .thirdPage,
+  .forthPage,
+  .fifthPage {
+    padding: 70px 40px;
+
+    .cont, .conts {
+      width: 100%;
+      position: relative;
+
+      p {
+        width: 100%;
+        padding: 4px;
+      }
+    }
+
+    .cont {
+      width: 100vw;
+      .steps {
+        .step {
+          height: auto;
+          flex-direction: column;
+
+          .txt {
+            width: 100%;
+            text-align: center;
+            margin: 10px 0 20px 0;
+            p {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+
+    .txtBox {
+      left: 0 !important;
+      top: -1vh;
+
+      h1 {
+        font-size: 1.7em;
+        line-height: 1.5;
+        span {
+          line-height: 1.5;
+          font-size: 1.4em;
+        }
+      }
+    }
+
+    #anim {
+      width: 100vw;
+      transform: scale(1.2);
+      z-index: 19;
+      top: 0;
+      position: relative;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: auto;
+      overflow: hidden;
+    }
+  }
+  .secondPage {
+    padding: 180px 40px 0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    .menu-icon {
+      display: block;
+      
+      &__line {
+        animation: closeMid 0.8s backwards;
+        animation-direction: reverse;
+        &::before {
+          animation: closeTop 0.8s backwards;
+          animation-direction: reverse;
+        }
+        &::after {
+          animation: closeBtm 0.8s backwards;
+          animation-direction: reverse;
+        }
+      }
+    }
+    .nav-links {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10rem 0;
+      width: 100vw;
+      height: 100vh;
+      font-size: 2rem;
+      color: #fff;
+      background: #05386b;
+      // display: none;
+      clip-path: circle(200px at top right);
+
+      #drop{
+        .dropdown-content {
+          width: 100vw;
+        }
+      }
+
+      .nav-link {
+        opacity: 0;
+        transform: translateX(130%);
+        width: 100%;
+        text-align: center;
+
+        a {
+          display: block;
+          padding: 2rem 0;
+        }
+      }
+    }
+
+    .menu-btn:checked ~ .nav-links {
+      // display: flex;
+      opacity: 1;
+      clip-path: circle(100% at center);
+
+      .nav-link {
+        opacity: 1;
+        transform: translateX(0);
+        transition: opacity 0.2s ease-in-out 1s,
+          transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1s;
+
+        @for $i from 1 through 4 {
+          &:nth-of-type(3n + #{$i}) {
+            transition-delay: random() + s;
+          }
+        }
+      }
+    }
+
+    .menu-btn:checked ~ .menu-icon {
+      border-radius: 90px;
+      animation: pulse 1s;
+
+      .menu-icon__line {
+        background: #fff;
+        animation: openMid 0.8s forwards;
+        &::before {
+          background: #fff;
+          animation: openTop 0.8s forwards;
+        }
+
+        &::after {
+          background: #fff;
+          animation: openBtm 0.8s forwards;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .register form .inputGroup {
+    width: 100%;
+  }
+
+  .thirdPage {
+    padding: 70px 20px;
+  }
+  .options .active {
+    min-width: 88vw;
+  }
+
+  
+  .forthPage {
+    padding: 20px 20px 140px;
+
+    .lor {
+      .tit {
+        i {
+          margin: 10px;
+        }
+      }
+      .l {
+        flex-direction: column;
+      }
+      .texts .row {
+        flex-direction: column;
+        padding: 0;
+
+        .text {
+          padding: 0;
+
+          i {
+            text-shadow: 0 0 30px $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .secondPage .progress_inner__tabs .tab {
+    padding: 30px;
+
+    h1 {
+      margin-bottom: 20px;
+      font-family: "Dela Gothic One", cursive;
+      font-weight: 800;
+      font-size: 40px;
+    }
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .secondPage .cont .steps .step {
+    &:nth-of-type(1),
+    &:nth-of-type(3) {
+      flex-direction: row-reverse;
+    }
+  }
+}

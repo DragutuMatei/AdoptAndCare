@@ -1,0 +1,499 @@
+{% extends 'animals/base.html' %} {% load static %} {% block content %}
+
+<link rel="stylesheet" href="{% static 'animals/css/panda.css' %}">
+<div class="tot">
+
+    <div class="animal">
+
+        <div class="panda">
+            <div class="ear"></div>
+            <div class="face">
+                <div class="eye-shade"></div>
+                <div class="eye-white">
+                    <div class="eye-ball"></div>
+                </div>
+                <div class="eye-shade rgt"></div>
+                <div class="eye-white rgt">
+                    <div class="eye-ball"></div>
+                </div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="body"> </div>
+
+        </div>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="hand"></div>
+            <div class="hand rgt"></div>
+            <h1>Donate a pet</h1>
+            <div class="form-group">
+                <h3>Write pet's name</h3>
+                <input type="text" name="name" maxlength="200" required="" id="id_name">
+                {{form.name.errors}}
+            </div>
+            <div class="form-group">
+                <h3>Write someting about the pet(how you found it, is he ok...)</h3>
+                <textarea name="description" cols="40" rows="10" required="" id="id_description"></textarea>
+                {{form.description.errors}}
+            </div>
+            <div class="ameno">
+                <div class="form-group" style="width: 150px;">
+                    <h3>Put a photo of him</h3>
+
+                    <div class="login_inner__avatar" style="margin: 10px;transform: none;">
+                        <label id="drop_target1">
+                            <div id="image_preview1"></div>
+                            <input type="file" name="imag1" accept="image/*" id="id_imag1">
+                        </label>
+                    </div>
+                    {{form.imag1.errors}}
+                </div>
+                <div class="form-group" style="width: 150px;">
+                    <h3>Put a photo of him</h3>
+
+                    <div class="login_inner__avatar" style="margin: 10px;transform: none;">
+                        <label id="drop_target2">
+                            <div id="image_preview2"></div>
+                            <input type="file" name="imag2" accept="image/*" id="id_imag2">
+                        </label>
+                    </div>
+
+                    {{form.imag2.errors}}
+                </div>
+                <div class="form-group" style="width: 150px;">
+                    <h3>Put a photo of him</h3>
+
+
+                    <div class="login_inner__avatar" style="margin: 10px;transform: none;">
+                        <label id="drop_target3">
+                            <div id="image_preview3"></div>
+                            <input type="file" name="imag3" accept="image/*" id="id_imag3">
+                        </label>
+                    </div>
+
+                    {{form.imag3.errors}}
+                </div>
+                <div class="form-group" style="width: 150px;">
+                    <h3>Put a photo of him</h3>
+                    <div class="login_inner__avatar" style="margin: 10px;transform: none;">
+                        <label id="drop_target4">
+                            <div id="image_preview4"></div>
+                            <input type="file" name="imag4" accept="image/*" id="id_imag4">
+                        </label>
+                    </div>
+
+                    {{form.imag4.errors}}
+                </div>
+                <div class="form-group" style="width: 150px;">
+                    <h3>Put a photo of him</h3>
+
+                    <div class="login_inner__avatar" style="margin: 10px;transform: none;">
+                        <label id="drop_target5">
+                            <div id="image_preview5"></div>
+                            <input type="file" name="imag5" accept="image/*" id="id_imag5">
+                        </label>
+                    </div>
+                    {{form.imag5.errors}}
+                </div>
+            </div>
+            <div class="form-group">
+                <h3>What is it?</h3>
+                {{form.animal}}
+                {{form.animal.errors}}
+            </div>
+            <div class="form-group">
+                <h3>How old is it?</h3>
+                {{form.age}}
+                {{form.age.errors}}
+            </div>
+            <div class="form-group">
+                <h3>Is it a purebreed?</h3>
+
+                <div class="idks">
+                    <div class="cbx">
+                        <input id="cbx" type="checkbox" name="de_rasa" id="id_de_rasa">
+                        <label for="cbx"></label>
+                        <svg width="15" height="14" viewbox="0 0 15 14" fill="none">
+                            <path d="M2 8.36364L6.23077 12L13 2"></path>
+                        </svg>
+                    </div>
+                </div>
+                {{form.de_rasa.errors}}
+            </div>
+            <div class="form-group">
+                <h3>How hard is it to take care of it?</h3>
+                {{form.take_care}}
+                {{form.take_care.errors}}
+            </div>
+            <div class="form-group">
+                <h3>How big is it?</h3>
+                {{form.size}}
+                {{form.size.errors}}
+            </div>
+            <div class="form-group">
+                <h3>Is it a male or female?</h3>
+                {{form.gender}}
+                {{form.gender.errors}}
+            </div>
+            <div class="form-group">
+                <h3>What is its condition? (out of 10)</h3>
+                <input type="number" max="10" name="condition" required="" id="id_condition">
+                {{form.condition.errors}}
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn">Donate</button>
+            </div>
+            <div class="foot">
+                <div class="finger"></div>
+            </div>
+            <div class="foot rgt">
+                <div class="finger"></div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script>
+    $('#password').focusin(function () {
+        $('form').addClass('up')
+    });
+    $('#password').focusout(function () {
+        $('form').removeClass('up')
+    });
+
+    // Panda Eye move
+    $(document).on("mousemove", function (event) {
+        var dw = $(document).width() / 15;
+        var dh = $(document).height() / 15;
+        var x = event.pageX / dw;
+        var y = event.pageY / dh;
+        $('.eye-ball').css({
+            width: x,
+            height: y
+        });
+    });
+
+
+
+
+    var $droptarget2 = $("#drop_target2"),
+        $dropinput2 = $("#id_imag2"),
+        $dropimg2 = $("#image_preview2"),
+        $remover2 = $('[data-action="remove_current_image"]');
+
+    $droptarget2.on("dragover", function () {
+        $droptarget2.addClass("dropping");
+        return false;
+    });
+
+    $droptarget2.on("dragend dragleave", function () {
+        $droptarget2.removeClass("dropping");
+        return false;
+    });
+
+    $droptarget2.on("drop", function (e) {
+        $droptarget2.removeClass("dropping");
+        $droptarget2.addClass("dropped");
+        $remover2.removeClass("disabled");
+        e.preventDefault();
+
+        var file = e.originalEvent.dataTransfer.files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg2.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+
+        return false;
+    });
+
+    $droptarget2.change(function (e) {
+        $droptarget2.addClass("dropped");
+        $remover2.removeClass("disabled");
+        $(".image_title input").val("");
+
+        var file = $dropinput2.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg2.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    $droptarget2.on("click", function () {
+        $dropimg2.css("background-image", "");
+        $droptarget2.removeClass("dropped");
+        $remover2.addClass("disabled");
+        $(".image_title input").val("");
+    });
+
+    $(".image_title input").blur(function () {
+        if ($(this).val() != "") {
+            $droptarget2.removeClass("dropped");
+        }
+    });
+
+
+    var $droptarget = $("#drop_target1"),
+        $dropinput = $("#id_imag1"),
+        $dropimg = $("#image_preview1"),
+        $remover = $('[data-action="remove_current_image"]');
+
+    $droptarget.on("dragover", function () {
+        $droptarget.addClass("dropping");
+        return false;
+    });
+
+    $droptarget.on("dragend dragleave", function () {
+        $droptarget.removeClass("dropping");
+        return false;
+    });
+
+    $droptarget.on("drop", function (e) {
+        $droptarget.removeClass("dropping");
+        $droptarget.addClass("dropped");
+        $remover.removeClass("disabled");
+        e.preventDefault();
+
+        var file = e.originalEvent.dataTransfer.files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+
+        return false;
+    });
+
+    $droptarget.change(function (e) {
+        $droptarget.addClass("dropped");
+        $remover.removeClass("disabled");
+        $(".image_title input").val("");
+
+        var file = $dropinput.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    $droptarget.on("click", function () {
+        $dropimg.css("background-image", "");
+        $droptarget.removeClass("dropped");
+        $remover.addClass("disabled");
+        $(".image_title input").val("");
+    });
+
+    $(".image_title input").blur(function () {
+        if ($(this).val() != "") {
+            $droptarget.removeClass("dropped");
+        }
+    });
+
+
+
+
+    var $droptarget3 = $("#drop_target3"),
+        $dropinput3 = $("#id_imag3"),
+        $dropimg3 = $("#image_preview3"),
+        $remover3 = $('[data-action="remove_current_image"]');
+
+    $droptarget3.on("dragover", function () {
+        $droptarget3.addClass("dropping");
+        return false;
+    });
+
+    $droptarget3.on("dragend dragleave", function () {
+        $droptarget3.removeClass("dropping");
+        return false;
+    });
+
+    $droptarget3.on("drop", function (e) {
+        $droptarget3.removeClass("dropping");
+        $droptarget3.addClass("dropped");
+        $remover3.removeClass("disabled");
+        e.preventDefault();
+
+        var file = e.originalEvent.dataTransfer.files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg3.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+
+        return false;
+    });
+
+    $droptarget3.change(function (e) {
+        $droptarget3.addClass("dropped");
+        $remover3.removeClass("disabled");
+        $(".image_title input").val("");
+
+        var file = $dropinput3.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg3.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    $droptarget3.on("click", function () {
+        $dropimg3.css("background-image", "");
+        $droptarget3.removeClass("dropped");
+        $remover3.addClass("disabled");
+        $(".image_title input").val("");
+    });
+
+    $(".image_title input").blur(function () {
+        if ($(this).val() != "") {
+            $droptarget3.removeClass("dropped");
+        }
+    });
+
+
+    
+
+    var $droptarget4 = $("#drop_target4"),
+        $dropinput4 = $("#id_imag4"),
+        $dropimg4 = $("#image_preview4"),
+        $remover4 = $('[data-action="remove_current_image"]');
+
+    $droptarget4.on("dragover", function () {
+        $droptarget4.addClass("dropping");
+        return false;
+    });
+
+    $droptarget4.on("dragend dragleave", function () {
+        $droptarget4.removeClass("dropping");
+        return false;
+    });
+
+    $droptarget4.on("drop", function (e) {
+        $droptarget4.removeClass("dropping");
+        $droptarget4.addClass("dropped");
+        $remover4.removeClass("disabled");
+        e.preventDefault();
+
+        var file = e.originalEvent.dataTransfer.files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg4.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+
+        return false;
+    });
+
+    $droptarget4.change(function (e) {
+        $droptarget4.addClass("dropped");
+        $remover4.removeClass("disabled");
+        $(".image_title input").val("");
+
+        var file = $dropinput4.get(0).files[0],
+            reader = new FileReader();
+
+        reader.onload = function (event) {
+            $dropimg4.css("background-image", "url(" + event.target.result + ")");
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    $droptarget4.on("click", function () {
+        $dropimg4.css("background-image", "");
+        $droptarget4.removeClass("dropped");
+        $remover4.addClass("disabled");
+        $(".image_title input").val("");
+    });
+
+    $(".image_title input").blur(function () {
+        if ($(this).val() != "") {
+            $droptarget4.removeClass("dropped");
+        }
+    });
+
+    
+
+var $droptarget5 = $("#drop_target5"),
+    $dropinput5 = $("#id_imag5"),
+    $dropimg5 = $("#image_preview5"),
+    $remover5 = $('[data-action="remove_current_image"]');
+
+$droptarget5.on("dragover", function () {
+    $droptarget5.addClass("dropping");
+    return false;
+});
+
+$droptarget5.on("dragend dragleave", function () {
+    $droptarget5.removeClass("dropping");
+    return false;
+});
+
+$droptarget5.on("drop", function (e) {
+    $droptarget5.removeClass("dropping");
+    $droptarget5.addClass("dropped");
+    $remover5.removeClass("disabled");
+    e.preventDefault();
+
+    var file = e.originalEvent.dataTransfer.files[0],
+        reader = new FileReader();
+
+    reader.onload = function (event) {
+        $dropimg5.css("background-image", "url(" + event.target.result + ")");
+    };
+
+    reader.readAsDataURL(file);
+
+    return false;
+});
+
+$droptarget5.change(function (e) {
+    $droptarget5.addClass("dropped");
+    $remover5.removeClass("disabled");
+    $(".image_title input").val("");
+
+    var file = $dropinput5.get(0).files[0],
+        reader = new FileReader();
+
+    reader.onload = function (event) {
+        $dropimg5.css("background-image", "url(" + event.target.result + ")");
+    };
+
+    reader.readAsDataURL(file);
+});
+
+$droptarget5.on("click", function () {
+    $dropimg5.css("background-image", "");
+    $droptarget5.removeClass("dropped");
+    $remover5.addClass("disabled");
+    $(".image_title input").val("");
+});
+
+$(".image_title input").blur(function () {
+    if ($(this).val() != "") {
+        $droptarget5.removeClass("dropped");
+    }
+});
+
+
+</script>
+<script src=" {% static 'animals/js/navbar.js' %} "></script>
+
+{% endblock content %}
